@@ -3,7 +3,7 @@
 
 Consumer Producer Example
 ========================
-A generic example of the consumer producer problem using semaphores to prevent modifying variables in the critical section. 
+A generic example of the consumer producer problem using semaphores to prevent modifying shared variables in the critical section. Algorithms like this would generally be used when adding and removing memory from the buffer. While the only thing this will do is print, "hello world" to the screen, it's nice to see how we would need to implement it. 
 
 Starting the terminal
 ----------------------
