@@ -1,4 +1,5 @@
 # OpSYS
+##Author: Jonathan Gillispie
 Consumer Producer Example
 ========================
 A generic example of the consumer producer problem using semaphores to prevent modifying variables in the critical section. 
@@ -22,4 +23,24 @@ Type or copy the commands below to compile and then run the code. Again, don't t
 $ gcc producer.c -pthread -lrt -o producer
 $ gcc consumer.c -pthread -lrt -o consumer
 $ ./producer & ./consumer &
+```
+
+Example output
+----------------------
+Below are some examples of the code running. 
+```
+[1] 236550
+[2] 236551
+
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+hello there!!!
+[1]-  Done                    ./producer
+[2]+  Done                    ./consumer
 ```
