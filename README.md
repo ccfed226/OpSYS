@@ -1,5 +1,6 @@
 # OpSYS
-##Author: Jonathan Gillispie
+## Author: Jonathan Gillispie
+
 Consumer Producer Example
 ========================
 A generic example of the consumer producer problem using semaphores to prevent modifying variables in the critical section. 
