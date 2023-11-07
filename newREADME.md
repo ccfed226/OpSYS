@@ -28,7 +28,7 @@ $ ./producer "qewpfjkdaa" & ./consumer "qewpfjkdaa"
 
 Some modifications to the previous program
 ---------------------------------------
-There were several core dumps, and generally items weren't added and removed from the table randomly. To fix this, random numbers were generated to call the sleep() function after the critical sections for the producer and consumer codes were finished. THen to prevent the producer from adding too many items to the table due to a longer waiting time from the consumer, the producer has been set to sleep for one second after every two iterations. For some reason the consumer code knows to wait for the producer to add items to the table, but the producer doesn't know if the table is full or not. Because of this, additional modifications will need to be make to improve the code. 
+There were several segmentation faults, and generally items weren't added and removed from the table randomly. To fix this, random numbers were generated to call the sleep() function after the critical sections for the producer and consumer codes were finished. THen to prevent the producer from adding too many items to the table due to a longer waiting time from the consumer, the producer has been set to sleep for one second after every two iterations. For some reason the consumer code knows to wait for the producer to add items to the table, but the producer doesn't know if the table is full or not. Because of this, additional modifications will need to be make to improve the code. 
 
 Example output
 ----------------------
