@@ -19,29 +19,31 @@ This is where you type your commands. When you see the ``$`` in the following ex
 
 Running and compiling the program
 --------------------------
-Type or copy the commands below to compile and then run the code. Again, don't type ``$`` into the command line, it's just there to show that the command goes into the command line. 
+Type or copy the commands below to compile and then run the code. Again, don't type ``$`` into the command line, it's just there to show that the command goes into the command line. "qewpfjkdaa" is just an example of a random string that you can name your shared memory. 
 ```
-$ gcc producer.c -pthread -lrt -o producer
-$ gcc consumer.c -pthread -lrt -o consumer
-$ ./producer & ./consumer &
+$ g++ producer.cpp -pthread -lrt -o producer
+$ g++ consumer.cpp -pthread -lrt -o consumer
+$ ./producer "qewpfjkdaa" & ./consumer "qewpfjkdaa"
 ```
+
+Some modifications to the previous program
+---------------------------------------
+There were several core dumps, and generally items weren't added and removed from the table randomly. To fix this, random numbers were generated to call the sleep() function after the critical sections for the producer and consumer codes were finished. THen to prevent the producer from adding too many items to the table due to a longer waiting time from the consumer, the producer has been set to sleep for one second after every two iterations. For some reason the consumer code knows to wait for the producer to add items to the table, but the producer doesn't know if the table is full or not. Because of this, additional modifications will need to be make to improve the code. 
 
 Example output
 ----------------------
 Below are some examples of the code running. 
 ```
-[1] 236550
-[2] 236551
-
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-hello there!!!
-[1]-  Done                    ./producer
-[2]+  Done                    ./consumer
+[13] 787918
+Produced: hello there!!!
+Produced: hello there!!!
+Consumed: hello there!!!
+Consumed: hello there!!!
+Produced: hello there!!!
+Consumed: hello there!!!
+Produced: hello there!!!
+Consumed: hello there!!!
+Produced: hello there!!!
+Consumed: hello there!!! 
+[13]+  Done                    ./producer "qewpfjkdaa"
 ```
