@@ -47,3 +47,34 @@ Produced: hello there!!!
 Consumed: hello there!!! 
 [13]+  Done                    ./producer "qewpfjkdaa"
 ```
+
+Example errors
+----------------------------
+It has been found that directly after segmentation faults occur, running the code again results in consuming the items that were produced. 
+```
+[1] 804085
+1
+2
+Produced: hello there!!!
+1
+2
+Produced: hello there!!!
+Segmentation fault (core dumped)
+[jgillis8@wasp OpSYS]$ ./producer "qewpfjkdaa" & ./consumer "qewpfjkdaa"
+[2] 806003
+Consumed: hello there!!!
+Consumed: hello there!!!
+2
+Produced: hello there!!!
+1
+2
+Produced: hello there!!!
+Consumed: hello there!!!
+Consumed: hello there!!!
+1
+2
+Produced: hello there!!!
+Consumed: hello there!!!
+[2]+  Segmentation fault      (core dumped) ./producer "qewpfjkdaa"
+[1]+  Done                    ./producer "qewpfjkdaa"
+```
