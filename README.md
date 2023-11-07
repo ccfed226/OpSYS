@@ -1,6 +1,10 @@
 # OpSYS
 ## Author: Jonathan Gillispie
 
+Note
+============
+There are two versions of the code, I intend to have the .cpp files graded. While the C code does compile, the C++ code works better in my opinion. 
+
 Consumer Producer Example
 ========================
 A generic example of the consumer producer problem using semaphores to prevent modifying shared variables in the critical section. Algorithms like this would generally be used when adding and removing memory from the buffer. While the only thing this will do is print, "hello world" to the screen, it's nice to see how we would need to implement it. 
